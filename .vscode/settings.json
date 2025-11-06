@@ -1,7 +1,4 @@
 {
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
   "editor.quickSuggestions": {
     "strings": "on"
   },
@@ -17,22 +14,20 @@
     "**/.git": true,
     "**/.cursor": true
   },
-  "cSpell.words": [
-    "devicon",
-    "Goonma",
-    "iconify",
-    "lucide",
-    "MISA",
-    "oklch",
-    "Pinia",
-    "TOEIC",
-    "unocss",
-    "Vite",
-    "vuejs",
-    "Vuex",
-    "wordmark"
-  ],
   "i18n-ally.localesPaths": ["i18n/locales"],
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.sourceLanguage": "en"
+  "i18n-ally.sourceLanguage": "en",
+
+  /* https://github.com/antfu/eslint-config?tab=readme-ov-file#ide-support-auto-fix-on-save */
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "css",
+    "scss"
+  ]
 }
