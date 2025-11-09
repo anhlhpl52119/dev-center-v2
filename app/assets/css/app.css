@@ -1,4 +1,6 @@
-@layer theme, base, components, utilities;
+@layer variable, theme, base, components, utilities;
+
+@import './root.css' layer(variable);
 
 @import 'tailwindcss/theme.css' layer(theme);
 
@@ -9,4 +11,19 @@
 
 @theme inline {
   --color-*: initial;
+  --color-primary: var(--primary-color);
+
+  --color-muted: var(--text-muted);
+  --color-dimmed: var(--text-dimmed);
+  --color-base-txt: var(--text-base);
+  --color-primary: var(--text-primary);
+  --color-invert: var(--text-invert);
+
+  --color-abd-base: var(--app-border-base);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--app-background-gradient);
+  color: var(--text-base);
 }
