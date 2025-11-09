@@ -1,26 +1,30 @@
 :root {
-  /*
-  primary: hsba(226, 82%, 100%, 1)
+  /* border */
+  --code-dark-indigo: 0.3417 0.0421 273.18; /* oklch(0.3417 0.0421 273.18) */
+  --code-stove-blue: 0.558 0.243052 265.5318; /* oklch(0.558 0.243052 265.5318) */
+  --code-neutral-gray: 0.683 0 0; /* oklch(0.683 0 0) */
+  --code-standard-gray: 0.5103 0 0; /* oklch(0.5103 0 0) */
+  --code-darkgrey: 0.5103 0 0; /* oklch(0.3211 0 0) */
+  --code-pure-white: 1 0 0; /* oklch(1 0 0) */
+  --code-pure-black: 0 0 0; /* oklch(oklch(0 0 0) */
 
-  text muted: hsba(0, 0%, 60%, 1)
-  Text dimmed: hsba(0, 0%, 40%, 1)
-  Text base: hsba(0, 0%, 20%, 1)
-  Text highlight primary: hsba(226, 82%, 100%, 1); // primary
-  text invert: hsba(0, 0%, 100%, 1); //use with text in background primary
+  --primary-alpha: 1;
 
-  box-shadow: 0px 4px 16px 0px hsba(228, 38%, 31%, 0.1);
-  background gradient linear-gradient(0deg, #F8FBFF, #F8FBFF), linear-gradient(180deg, rgba(134, 186, 255, 0.2) 0%, rgba(255, 255, 255, 0) 45.9%);
-  background primary hover: background: hsba(226, 82%, 100%, 0.06); // primary op `0.06`
+  --primary-color-code: var(--code-stove-blue);
 
-  border: hsba(0, 0%, 0%, 0.1)
-   */
-  --primary: hsba(226, 82%, 100%, 1);
-  --text-color-muted: hsba(0, 0%, 60%, 1);
-  --text-color-dimmed: hsba(0, 0%, 40%, 1);
-  --text-color-base: hsba(0, 0%, 20%, 1);
-  --text-color-highlight: --app-font-family: var(--font-family-ko);
-  --bg-color-base: var();
-  --app-color-primary: var(##86baff);
+  --text-muted: oklch(var(--code-neutral-gray) / var(--primary-alpha));
+  --text-dimmed: oklch(var(--code-standard-gray) / var(--primary-alpha));
+  --text-base: oklch(var(--code-darkgrey-gray) / var(--primary-alpha));
+  --text-primary: oklch(var(--primary-color-code) / var(--primary-alpha));
+  --text-invert: oklch(var(--pure-white) / var(--primary-alpha));
+
+  --app-border-base: oklch(var(--code-pure-black) / 0.1);
+  --hover-background-primary: oklch(var(--primary-color-code) / 0.06);
+  --shadow: oklch(var(--code-dark-indigo) / 0.1);
+  --box-shadow-base: 0px 4px 16px 0px oklch(0.3417 0.0421 273.18 / 0.1);
+  --app-background-gradient:
+    linear-gradient(0deg, #f8fbff, #f8fbff),
+    linear-gradient(180deg, rgba(134, 186, 255, 0.2) 0%, rgba(255, 255, 255, 0) 45.9%);
 }
 
 html[lang='en'] {
@@ -28,5 +32,21 @@ html[lang='en'] {
 }
 
 html.dark {
-  --bg-color-base: var();
+  --primary-alpha: 1;
+
+  --primary-color-code: var(--code-stove-blue);
+
+  --text-muted: oklch(var(--code-neutral-gray) / var(--primary-alpha));
+  --text-dimmed: oklch(var(--code-standard-gray) / var(--primary-alpha));
+  --text-base: oklch(var(--code-darkgrey-gray) / var(--primary-alpha));
+  --text-primary: oklch(var(--primary-color-code) / var(--primary-alpha));
+  --text-invert: oklch(var(--pure-white) / var(--primary-alpha));
+
+  --app-border-base: oklch(var(--code-pure-black) / 0.1);
+  --hover-background-primary: oklch(var(--primary-color-code) / 0.06);
+  --shadow: oklch(var(--code-dark-indigo) / 0.1);
+  --box-shadow-base: 0px 4px 16px 0px oklch(0.3417 0.0421 273.18 / 0.1);
+  --app-background-gradient:
+    linear-gradient(0deg, #f8fbff, #f8fbff),
+    linear-gradient(180deg, rgba(134, 186, 255, 0.2) 0%, rgba(255, 255, 255, 0) 45.9%);
 }
