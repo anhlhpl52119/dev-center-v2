@@ -48,6 +48,7 @@
     --hover-background-primary: oklch(var(--primary-color-code) / 0.06);
     --shadow: oklch(var(--code-dark-indigo) / 0.1);
     --box-shadow-base: 0px 4px 16px 0px oklch(0.3417 0.0421 273.18 / 0.1);
+    --app-background-base: oklch(var(--code-pure-white));
     --app-background-gradient:
       linear-gradient(0deg, #f8fbff, #f8fbff),
       linear-gradient(180deg, rgba(134, 186, 255, 0.2) 0%, rgba(255, 255, 255, 0) 45.9%);
@@ -73,8 +74,7 @@
     --hover-background-primary: oklch(var(--primary-color-code) / 0.06);
     --shadow: oklch(var(--code-dark-indigo) / 0.1);
     --box-shadow-base: 0px 4px 16px 0px oklch(0.3417 0.0421 273.18 / 0.1);
-    --app-background-gradient:
-      linear-gradient(0deg, #f8fbff, #f8fbff),
-      linear-gradient(180deg, rgba(134, 186, 255, 0.2) 0%, rgba(255, 255, 255, 0) 45.9%);
+    --app-background-base: oklch(var(--code-pure-white));
+    --app-background-gradient: linear-gradient(180deg, rgba(134, 186, 255, 0.2) 0%, rgba(255, 255, 255, 0) 45.9%);
   }
 }
