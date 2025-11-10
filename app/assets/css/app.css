@@ -26,7 +26,6 @@
 
 body {
   min-height: 100vh;
-  /* background: var(--app-background-gradient); */
   color: var(--text-base);
   font-size: 14px;
   background: linear-gradient(180deg, rgba(134, 186, 255, 0.2) 0%, rgba(255, 255, 255, 0) 45.9%);
