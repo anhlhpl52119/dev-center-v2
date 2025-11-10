@@ -7,22 +7,11 @@ const config = useRuntimeConfig();
 </script>
 
 <template>
-  <main class="mx-auto grid grid-cols-[150px_1fr_120px] pt-8">
-    <div>LNB</div>
+  <main class="flex min-h-screen max-w-7xl mx-auto relative">
+    <AppLNB class="w-68 shrink-0 h-screen sticky top-0 overflow-y-auto p-6 pt-8 hidden md:block" />
 
-    <div class="w-[400px]">
-      <h1 class="font-bold text-3xl">
-        Lorem ipsum dolor sit
-      </h1>
-      <p class="text-dimmed text-sx">
-        Amet consectetur adipisicing elit.
-      </p>
+    <AppArticle class="pt-10 pb-38.5" />
 
-      <article class="bg-abg-base p-8 rounded-4xl shadow-sm">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore deserunt officiis eius numquam. Culpa incidunt officia repudiandae placeat? Dolore odit quia suscipit dolores ad illo reiciendis excepturi fugit veritatis iusto.
-      </article>
-    </div>
-
-    <div>RNB</div>
+    <AppAside class="w-72 shrink-0 sticky h-screen top-0 overflow-y-auto p-8 hidden lg:block" />
   </main>
 </template>

@@ -7,17 +7,17 @@ console.log('');
     <nav class="max-w-400 h-16 px-10 mx-auto flex items-center justify-end-safe">
       <!-- Left -->
       <div class="mr-auto">
-        <NuxtLink to="/">
+        <NuxtLink to="/" class="mr-4">
           <Icon name="svg:stove-text-logo" class="h-4 align-middle" />
         </NuxtLink>
 
-        <span class="ml-4 align-middle text-xl">
+        <span class="inline-block align-middle text-xl font-bold">
           창작자 센터 바로가기
         </span>
       </div>
 
       <!-- Right -->
-      <ul class="flex gap-4 items-center">
+      <ul class="flex gap-4 items-center flex-wrap">
         <li>
           <NuxtLink
             external
