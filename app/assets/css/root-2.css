@@ -1,0 +1,228 @@
+/* 1. KHAI BÁO BIẾN (VARIABLES) GỐC */
+:root {
+  /* Cho phép trình duyệt tự động chuyển đổi UI (scrollbars, etc.) */
+  color-scheme: light dark;
+
+  /* * A. BẢNG MÀU (OKLCH)
+   * Định dạng: oklch(Lightness Chroma Hue)
+   * - Lightness: 0% (đen) đến 100% (trắng)
+   * - Chroma: 0 (xám) đến ~0.37+ (rực rỡ)
+   * - Hue: 0 đến 360 (góc trên bánh xe màu)
+   */
+
+  /* --- Bảng màu cho Light Mode --- */
+  --surface-bg: oklch(98.5% 0.01 240); /* Nền chính (rất nhạt) */
+  --surface-card: oklch(100% 0 0); /* Nền thẻ (trắng) */
+  --text-primary: oklch(25% 0.02 240); /* Chữ chính (đen đậm) */
+  --text-secondary: oklch(45% 0.02 240); /* Chữ phụ (xám) */
+  --brand-primary: oklch(60% 0.2 265); /* Màu thương hiệu (Xanh/Tím) */
+  --brand-text: oklch(98.5% 0.01 240); /* Chữ trên nền thương hiệu */
+  --border-color: oklch(90% 0.01 240); /* Màu viền */
+
+  /* * B. FONT STACKS (Ngăn xếp phông chữ)
+   * Chúng ta định nghĩa các ngăn xếp riêng biệt.
+   */
+
+  /* Ngăn xếp mặc định (Latin/Tiếng Anh) */
+  --font-stack-default: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Ngăn xếp cho Tiếng Hàn */
+  --font-stack-korean: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Nanum Gothic', sans-serif;
+
+  /* Ngăn xếp cho Tiếng Nhật (ví dụ thêm) */
+  --font-stack-japanese: 'Hiragino Kaku Gothic ProN', 'Meiryo', 'Yu Gothic', sans-serif;
+
+  /* * C. TYPOGRAPHY & SPACING (Kiểu chữ & Khoảng cách)
+   */
+  --base-font-size: 14px;
+  --line-height: 1.6;
+  --spacing-unit: 0.5rem; /* 7px */
+  --border-radius: 0.57rem; /* ~8px */
+}
+
+/* 2. KÍCH HOẠT DARK MODE */
+/* * Tự động dựa trên cài đặt hệ thống
+ * HOẶC thủ công bằng cách thêm `data-theme="dark"` vào thẻ <html>
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Chỉ ghi đè các biến màu cho dark mode */
+    --surface-bg: oklch(15% 0.01 240); /* Nền chính (rất tối) */
+    --surface-card: oklch(22% 0.02 240); /* Nền thẻ (tối) */
+    --text-primary: oklch(95% 0.02 240); /* Chữ chính (trắng nhạt) */
+    --text-secondary: oklch(65% 0.02 240); /* Chữ phụ (xám nhạt) */
+    --brand-primary: oklch(65% 0.22 265); /* Màu thương hiệu (sáng hơn) */
+    --brand-text: oklch(15% 0.01 240); /* Chữ trên nền thương hiệu */
+    --border-color: oklch(30% 0.02 240); /* Màu viền */
+  }
+}
+
+:root[data-theme='dark'] {
+  /* Sao chép các biến từ @media để đảm bảo ghi đè thủ công hoạt động */
+  --surface-bg: oklch(15% 0.01 240);
+  --surface-card: oklch(22% 0.02 240);
+  --text-primary: oklch(95% 0.02 240);
+  --text-secondary: oklch(65% 0.02 240);
+  --brand-primary: oklch(65% 0.22 265);
+  --brand-text: oklch(15% 0.01 240);
+  --border-color: oklch(30% 0.02 240);
+}
+
+/* 3. STYLES CƠ BẢN (RESET & DEFAULTS) */
+html {
+  /* Đặt cỡ chữ gốc là 14px theo yêu cầu */
+  font-size: var(--base-font-size);
+
+  /* Đặt font-family mặc định (Tiếng Anh) */
+  font-family: var(--font-stack-default);
+
+  /* Giúp cuộn trang mượt mà */
+  scroll-behavior: smooth;
+
+  /* Cải thiện hiển thị văn bản */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ghi đè font-family dựa trên ngôn ngữ */
+/* * Kỹ thuật này *thêm* font ngôn ngữ vào *trước* ngăn xếp mặc định.
+ * Trình duyệt sẽ dùng font Hàn/Nhật cho các ký tự đó,
+ * và dùng font mặc định cho các ký tự Latin (A, B, C...).
+ */
+html[lang='ko'] {
+  font-family: var(--font-stack-korean), var(--font-stack-default);
+}
+
+html[lang='ja'] {
+  font-family: var(--font-stack-japanese), var(--font-stack-default);
+}
+/* Thêm các ngôn ngữ khác nếu cần... */
+/*
+html[lang="vi"] {
+  font-family: "Be Vietnam Pro", var(--font-stack-default);
+}
+*/
+
+body {
+  /* Sử dụng 1rem (tương đương 14px đã set ở html) */
+  font-size: 1rem;
+  line-height: var(--line-height);
+
+  /* Áp dụng màu nền và màu chữ từ biến */
+  background-color: var(--surface-bg);
+  color: var(--text-primary);
+
+  margin: 0;
+  padding: calc(var(--spacing-unit) * 4); /* 4 * 7px = 28px */
+}
+
+/* Thiết lập các thẻ heading */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+a {
+  color: var(--brand-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* 4. CÁC THÀNH PHẦN (COMPONENTS) ĐƠN GIẢN */
+
+.button {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Biến thể của Button */
+.button-primary {
+  background-color: var(--brand-primary);
+  color: var(--brand-text);
+}
+.button-primary:hover {
+  /* Làm màu tối hơn một chút khi hover (giảm Lightness) */
+  background-color: oklch(from var(--brand-primary) calc(l - 0.05) c h);
+}
+
+.button-secondary {
+  background-color: var(--surface-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+.button-secondary:hover {
+  /* Làm nền tối hơn một chút khi hover */
+  background-color: oklch(from var(--surface-card) calc(l - 0.03) c h);
+}
+
+.card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing-unit) * 4); /* 28px */
+  box-shadow: 0 4px 12px oklch(from var(--text-primary) l c h / 0.05);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* 1. Mặc định (là Light Mode) */
+:root {
+  color-scheme: light;
+  --surface-bg: oklch(98.5% 0.01 240);
+  --surface-card: oklch(100% 0 0);
+  --text-primary: oklch(25% 0.02 240);
+  /* ... v.v. các biến light mode khác ... */
+}
+
+/* 2. Tự động Dark Mode (dựa trên OS) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --surface-bg: oklch(15% 0.01 240);
+    --surface-card: oklch(22% 0.02 240);
+    --text-primary: oklch(95% 0.02 240);
+    /* ... v.v. các biến dark mode khác ... */
+  }
+}
+
+/* 3. Thủ công (Ghi đè tất cả) - Có độ ưu tiên cao hơn */
+
+/* Ghi đè thành Light, bất kể OS là gì */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --surface-bg: oklch(98.5% 0.01 240);
+  --surface-card: oklch(100% 0 0);
+  --text-primary: oklch(25% 0.02 240);
+  /* ... v.v. các biến light mode khác ... */
+}
+
+/* Ghi đè thành Dark, bất kể OS là gì */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --surface-bg: oklch(15% 0.01 240);
+  --surface-card: oklch(22% 0.02 240);
+  --text-primary: oklch(95% 0.02 240);
+  /* ... v.v. các biến dark mode khác ... */
+}

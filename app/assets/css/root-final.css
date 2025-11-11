@@ -1,0 +1,33 @@
+@layer theme {
+  :root {
+    --ff-han-sans-neo:
+      'Spoqa Han Sans Neo', -apple-system, 'system-ui', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji';
+
+    --ff-inter:
+      'Inter', -apple-system, 'system-ui', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji';
+
+    /* RAW COLOR PALETTE */
+    --clr-white: hsla(0, 0%, 100%);
+    --clr-black: hsla(0, 0%, 0%);
+
+    --clr-black-l-70: hsla(0, 0%, 70%);
+    --clr-black-l-60: hsla(0, 0%, 70%);
+    --clr-black-l-40: hsla(0, 0%, 40%);
+    --clr-black-l-20: hsla(0, 0%, 40%);
+    --clr-black-l-12: hsla(0, 0%, 12%);
+
+    --clr-sky-blue-l-76: hsla(214, 100%, 76%); /* top bg gradient */
+
+    --clr-charcoal-l-25: hsl(228, 23%, 25%); /* shadow*/
+
+    --clr-ultramarine-l-59: hsla(226, 100%, 59%); /* primary*/
+
+    /*
+    read about relative hsl `from <color>`
+    ref: https://drafts.csswg.org/css-color-5/#relative-HSL
+    */
+    --test-clr-shadow: hsla(from var(--clr-charcoal-l-25) h s l / 0.1);
+  }
+}
