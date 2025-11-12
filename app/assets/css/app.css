@@ -1,32 +1,7 @@
-@layer variable, theme, base, components, utilities;
+@import './font-face.css';
 
-@import './root.css' layer(variable);
-
-@import 'tailwindcss/theme.css' layer(theme);
-
-@import './font.css' layer(base);
-@import 'tailwindcss/preflight.css' layer(base);
-
-@import 'tailwindcss/utilities.css' layer(utilities);
-
-/* ref: https://tailwindcss.com/docs/theme#default-theme-variable-reference */
-@theme inline {
-  --color-*: initial;
-  --color-primary: var(--primary-color);
-
-  --color-muted: var(--text-muted);
-  --color-dimmed: var(--text-dimmed);
-  --color-base-txt: var(--text-base);
-  --color-primary: var(--text-primary);
-  --color-invert: var(--text-invert);
-
-  --color-abd-base: var(--app-border-base);
-  --color-abg-base: var(--app-background-base);
-}
-
-body {
-  min-height: 100vh;
-  color: var(--text-base);
-  font-size: 14px;
-  background: linear-gradient(180deg, rgba(134, 186, 255, 0.2) 0%, rgba(255, 255, 255, 0) 45.9%);
-}
+@layer theme, base, components, utilities;
+@import './layers//01-theme.css' layer(theme);
+@import './layers/02-base.css' layer(base);
+@import './layers/03-components.css' layer(components);
+@import './layers/04-utilities.css' layer(utilities);
