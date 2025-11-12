@@ -16,7 +16,6 @@ strong {
 a {
   &:hover,
   &:focus-visible {
-    color: var(--color-tcl-primary);
     outline-color: var(--color-primary);
     outline-offset: 0.5rem;
   }
