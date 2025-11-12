@@ -18,6 +18,13 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['constants'],
   },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'ko', // Sets the lang attribute for the <html> tag
+      },
+    },
+  },
   icon: {
     mode: 'css',
     cssLayer: 'base',

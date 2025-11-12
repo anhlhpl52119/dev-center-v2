@@ -45,10 +45,10 @@ html {
 
   /* Korean font */
   &[lang='ko'] {
-    font-family: var(--ff-han-sans-neo), var(--font-stack-default);
+    font-family: var(--ff-han-sans-neo);
   }
   &[lang='en'] {
-    font-family: var(--ff-inter), var(--font-stack-default);
+    font-family: var(--ff-inter);
   }
 }
 
