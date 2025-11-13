@@ -4,7 +4,9 @@ console.log('');
 
 <template>
   <header class="bg-abg-base">
-    <nav class="max-w-400 h-16 px-10 mx-auto flex items-center justify-end-safe">
+    <nav
+      class="absolute mx-auto flex h-16 max-w-400 items-center justify-end-safe px-10"
+    >
       <!-- Left -->
       <div class="mr-auto">
         <NuxtLink to="/" class="mr-4">
@@ -17,17 +19,17 @@ console.log('');
       </div>
 
       <!-- Right -->
-      <ul class="flex gap-4 items-center flex-wrap">
+      <ul class="flex flex-wrap items-center gap-4">
         <li>
           <NuxtLink
             external
-            class="group font-medium cursor-pointer"
+            class="group cursor-pointer font-medium"
             target="_blank"
           >
             <span>창작자 센터 바로가기</span>
             <Icon
               name="svg:navigate-out"
-              class="size-3 ml-1.5 transition-colors duration-200 group-hover:text-primary"
+              class="group-hover:text-primary ml-1.5 size-3 transition-colors duration-200"
             />
           </NuxtLink>
         </li>
@@ -35,13 +37,13 @@ console.log('');
         <li>
           <input
             type="text"
-            class="border border-abd-base rounded-full py-3 pl-4 pr-10 w-55"
+            class="border-abd-base w-55 rounded-full border py-3 pr-10 pl-4"
             placeholder="검색어를 입력하세요."
           >
         </li>
 
         <li>
-          <Icon name="svg:locale" class="py-auto size-5 block" />
+          <Icon name="svg:locale" class="py-auto block size-5" />
         </li>
         <li><i class="block">avatar</i></li>
       </ul>
