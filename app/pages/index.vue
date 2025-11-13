@@ -5,11 +5,15 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="flex max-w-7xl mx-auto relative">
-    <AppLNB class="w-68 shrink-0 h-screen sticky top-0 overflow-y-auto p-6 pt-8 hidden md:block" />
+  <main class="relative mx-auto flex max-w-7xl">
+    <AppLNB
+      class="sticky top-0 hidden h-screen w-68 shrink-0 overflow-y-auto p-6 pt-8 md:block"
+    />
 
-    <AppArticle class="pt-10 pb-38.5 min-w-80" />
+    <AppArticle class="min-w-80 pt-10 pb-38.5" />
 
-    <AppAside class="w-72 shrink-0 sticky h-screen top-0 overflow-y-auto p-8 hidden lg:block" />
+    <AppAside
+      class="sticky top-0 hidden h-screen w-72 shrink-0 overflow-y-auto p-8 lg:block"
+    />
   </main>
 </template>

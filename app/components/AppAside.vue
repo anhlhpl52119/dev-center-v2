@@ -1,5 +1,3 @@
 <template>
-  <aside>
-    RNB
-  </aside>
+  <aside>RNB</aside>
 </template>
