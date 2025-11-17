@@ -8,22 +8,48 @@ export default defineNuxtConfig({
   typescript,
   runtimeConfig,
 
-  css: ['~/assets/css/app.css'],
-  modules: ['@nuxt/icon'],
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  css: ['~/assets/css/main.css'],
+  modules: ['@nuxt/icon', '@nuxtjs/i18n', '@vueuse/nuxt', 'floating-vue/nuxt'],
+  vite: { plugins: [tailwindcss()] },
   imports: {
     dirs: ['constants'],
   },
-  app: {
-    head: {
-      htmlAttrs: {
-        lang: 'ko', // Sets the lang attribute for the <html> tag
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        language: 'en',
+        files: ['en/common.json'],
       },
+      {
+        code: 'ko',
+        language: 'ko',
+        name: 'Korean',
+        files: ['ko/common.json'],
+      },
+    ],
+    strategy: 'prefix',
+    defaultLocale: 'ko',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'LOCALE',
     },
   },
-
+  app: {
+    head: {
+      link: [{
+        rel: 'stylesheet',
+        href: 'https://d2x8kymwjom7h7.cloudfront.net/live/application_no/STATIC/common/stds-font-icon-v2/stds-font-icon.css',
+      }],
+    },
+  },
   icon: {
     mode: 'css',
     cssLayer: 'base',
