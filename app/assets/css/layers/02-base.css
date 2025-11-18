@@ -33,28 +33,23 @@ input {
   }
 }
 
-html {
-  font-family: var(--ff-stack-default);
-
-  scroll-behavior: smooth;
-
-  /* text visualize */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-
-  /* Korean font */
-  &[lang='ko'] {
-    font-family: var(--ff-han-sans-neo);
-  }
-  &[lang='en'] {
-    font-family: var(--ff-inter);
-  }
+/* Scroll bar */
+*::-webkit-scrollbar-track-piece {
+  border-radius: 2em;
+  background-color: #f8f8f8;
 }
 
-body {
-  @apply text-tcl-base min-h-screen bg-fixed;
-  font-size: var(--text-body);
-  background-repeat: no-repeat;
-  background-image: var(--clr-background-underlay);
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 2em;
+  background-clip: padding-box;
+  background-color: #ddd;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
 }
