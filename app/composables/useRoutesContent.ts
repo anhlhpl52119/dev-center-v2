@@ -25,14 +25,11 @@ export function useRoutesContent() {
   const route = useRoute();
   const { locale } = useI18n();
 
-  const normalizedPath = computed(() => normalizeRoutePath(route.path, locale.value));
+  const normalizedPath = computed(() =>
+    normalizeRoutePath(route.path, locale.value),
+  );
 
-  const {
-    data,
-    pending,
-    error,
-    refresh,
-  } = useAPI<any>('graphql', {
+  const { data, pending, error, refresh } = useAPI<any>('graphql', {
     key: normalizedPath.value,
     method: 'POST',
     body: {
@@ -51,9 +48,15 @@ export function useRoutesContent() {
     watch: false,
   });
 
-  const content = computed(() => data.value?.data?.pages?.singleByPath?.content ?? '');
-  const title = computed(() => data.value?.data?.pages?.singleByPath?.title ?? '');
-  const updatedAt = computed(() => data.value?.data.pages?.singleByPath?.updatedAt ?? '');
+  const content = computed(
+    () => data.value?.data?.pages?.singleByPath?.content ?? '',
+  );
+  const title = computed(
+    () => data.value?.data?.pages?.singleByPath?.title ?? '',
+  );
+  const updatedAt = computed(
+    () => data.value?.data.pages?.singleByPath?.updatedAt ?? '',
+  );
 
   return {
     content,

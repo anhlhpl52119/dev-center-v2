@@ -49,7 +49,9 @@ const search = ref('');
             type="text"
             class="border-abd-base w-55 rounded-full border py-3 pr-10 pl-4"
             placeholder="검색어를 입력하세요."
-            @keyup.enter="navigateTo({ path: $localePath('/search'), query: { search } })"
+            @keyup.enter="
+              navigateTo({ path: $localePath('/search'), query: { search } })
+            "
           >
         </li>
 
@@ -71,9 +73,7 @@ const search = ref('');
             <Icon name="svg:locale" class="py-auto block size-5" />
             <!-- </button> -->
             <template #popper>
-              <ul
-                class="gnb-custom-lang-list-vdropdown"
-              >
+              <ul class="gnb-custom-lang-list-vdropdown">
                 <li
                   v-for="(value, key) in DEFAULT_LOCALES"
                   :key="key"

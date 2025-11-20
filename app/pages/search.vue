@@ -36,21 +36,33 @@ function highlightMatchKeyword(fullText: string) {
     return fullText;
   }
 
-  const escapedInput = trimmedSearchInput.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const escapedInput = trimmedSearchInput.replace(
+    /[.*+?^${}()|[\]\\]/g,
+    '\\$&',
+  );
 
   const matchedReg = new RegExp(`(${escapedInput})`, 'gi');
 
-  return fullText.replace(matchedReg, `<span class="text-primary font-medium">\$1</span>`);
+  return fullText.replace(
+    matchedReg,
+    `<span class="text-primary font-medium">\$1</span>`,
+  );
 }
 
 const searchContentV2 = computed(() => {
   const rs: any[] = data.value?.data?.pages?.search?.results?.web ?? [];
-  return rs.map(i => ({ title:
-     i.title, matched: highlightMatchKeyword(i.content), path: i.path }));
+  return rs.map(i => ({
+    title: i.title,
+    matched: highlightMatchKeyword(i.content),
+    path: i.path,
+  }));
 });
 
 async function onSearch() {
-  await navigateTo({ path: localePath('/search'), query: { search: search.value } });
+  await navigateTo({
+    path: localePath('/search'),
+    query: { search: search.value },
+  });
   execute();
 }
 </script>

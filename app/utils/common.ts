@@ -1,1 +1,3 @@
-export const slugify = (s: string) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
+export function slugify(s: string) {
+  return encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
+}

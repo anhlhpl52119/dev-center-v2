@@ -6,7 +6,7 @@ const error = useError();
   <main>
     <h1>Error please back home</h1>
     <pre>{{ error }}</pre>
-    <NuxtLinkLocale class="mt-10 text-primary" to="/">
+    <NuxtLinkLocale class="text-primary mt-10" to="/">
       Back home
     </NuxtLinkLocale>
   </main>

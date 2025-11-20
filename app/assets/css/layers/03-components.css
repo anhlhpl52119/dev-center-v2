@@ -37,8 +37,8 @@
     @apply hidden;
   }
   .v-popper__inner {
-    @apply py-2 rounded-xl border border-abd-base;
-    @apply shadow-sm min-w-40;
+    @apply border-abd-base rounded-xl border py-2;
+    @apply min-w-40 shadow-sm;
   }
 }
 
@@ -54,12 +54,12 @@
   }
 
   &.is-active {
-    @apply text-primary font-medium bg-abg-active;
+    @apply text-primary bg-abg-active font-medium;
 
     &:before {
       content: '\e95e';
       font-family: 'stds-font-icon-v2', serif !important;
-      @apply inline-block mr-1;
+      @apply mr-1 inline-block;
     }
   }
 }
