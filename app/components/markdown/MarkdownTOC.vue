@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import slugify from '@sindresorhus/slugify';
 import MarkdownIt from 'markdown-it';
-import anchor from 'markdown-it-anchor';
+// import anchor from 'markdown-it-anchor';
 
 const props = defineProps<{
   content?: string;
@@ -13,9 +13,7 @@ interface TocItem {
   anchor: string;
 }
 
-const md = new MarkdownIt().use(anchor, {
-  slugify: s => slugify(s),
-});
+const md = new MarkdownIt()
 
 const tocItems = computed(() => {
   if (!props.content)

@@ -1,7 +1,5 @@
 import type { Component, ComponentOptions, VNodeProps } from 'vue';
 
-export {};
-
 declare global {
   export type ComponentProps<C extends Component> = C extends new (
     ...args: any
@@ -13,3 +11,4 @@ declare global {
     T extends ComponentOptions<any> & Record<any, any>,
   > = T['emits'];
 }
+export {};

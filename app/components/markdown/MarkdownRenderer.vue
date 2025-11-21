@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { alert } from '@mdit/plugin-alert';
-import { figure } from '@mdit/plugin-figure';
-import { footnote } from '@mdit/plugin-footnote';
-import { mark } from '@mdit/plugin-mark';
-import { sub } from '@mdit/plugin-sub';
-import { sup } from '@mdit/plugin-sup';
-import { tab } from '@mdit/plugin-tab';
-import { tasklist } from '@mdit/plugin-tasklist';
+// import { alert } from '@mdit/plugin-alert';
+// import { figure } from '@mdit/plugin-figure';
+// import { footnote } from '@mdit/plugin-footnote';
+// import { mark } from '@mdit/plugin-mark';
+// import { sub } from '@mdit/plugin-sub';
+// import { sup } from '@mdit/plugin-sup';
+// import { tab } from '@mdit/plugin-tab';
+// import { tasklist } from '@mdit/plugin-tasklist';
 import slugify from '@sindresorhus/slugify';
 import DOMPurify from 'dompurify';
 import MarkdownIt from 'markdown-it';
-import anchor from 'markdown-it-anchor';
-import markdownItAttrs from 'markdown-it-attrs';
+// import anchor from 'markdown-it-anchor';
+// import markdownItAttrs from 'markdown-it-attrs';
 
-import linkAttrs from 'markdown-it-link-attributes';
-import markdownItTOC from 'markdown-it-toc-done-right';
+// import linkAttrs from 'markdown-it-link-attributes';
+// import markdownItTOC from 'markdown-it-toc-done-right';
 import AdmonitionPlugin from '@/lib/markdown-it-plugins/admonition';
 
 const props = defineProps<{
@@ -29,21 +29,22 @@ const md = new MarkdownIt({
   quotes: '“”‘’',
   xhtmlOut: true,
 })
-  .use(tasklist)
-  .use(figure)
-  .use(mark)
-  .use(sub)
-  .use(tab)
-  .use(sup)
-  .use(alert)
-  .use(markdownItAttrs)
-  .use(footnote)
-  .use(linkAttrs)
-  .use(markdownItTOC)
-  .use(AdmonitionPlugin)
-  .use(anchor, {
-    slugify: s => slugify(s),
-  });
+  .use(AdmonitionPlugin);
+
+// .use(tasklist)
+// .use(figure)
+// .use(mark)
+// .use(sub)
+// .use(tab)
+// .use(sup)
+// .use(alert)
+// .use(markdownItAttrs)
+// .use(footnote)
+// .use(linkAttrs)
+// .use(markdownItTOC)
+// .use(anchor, {
+//   slugify: s => slugify(s),
+// });
 
 const renderedContent = computed(() => {
   if (!props.content) {
