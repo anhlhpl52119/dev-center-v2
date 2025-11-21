@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { LNBModel, Model } from '~/components/OldLeftNavBar/types';
-import { getLNBQuery } from '~~/graphql/queries/lnb';
 
 const { locale } = useI18n();
 const lnbData = ref<any>({});
