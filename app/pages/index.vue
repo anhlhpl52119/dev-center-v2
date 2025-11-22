@@ -2,7 +2,7 @@
 definePageMeta({ name: 'home' });
 const localePath = useLocalePath();
 const { locale } = useI18n();
-if (locale.value === 'ko') {
+if (locale.value === 'en') {
   navigateTo(localePath('/web/etc/Generator'), { replace: true });
 }
 else {

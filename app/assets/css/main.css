@@ -8,8 +8,6 @@
 
 @layer base {
   html {
-    font-family: var(--ff-stack-default);
-
     scroll-behavior: smooth;
 
     /* text visualize */
@@ -17,9 +15,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 
-    /* Korean font */
-    &[lang='ko'] {
-      font-family: var(--ff-han-sans-neo);
+    /* Font */
+    &[lang='vi'] {
+      font-family: var(--ff-fk-grotesk);
     }
     &[lang='en'] {
       font-family: var(--ff-inter);
@@ -32,5 +30,8 @@
     background-repeat: no-repeat;
     background-color: var(--color-abg-underlay);
     background-image: var(--color-abg-gradient);
+  }
+  article {
+    font-family: var(--ff-fk-grotesk-neue);
   }
 }

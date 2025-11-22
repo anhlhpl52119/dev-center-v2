@@ -11,15 +11,15 @@ const lastUpdatedAt = computed(() => updatedAt.value);
   <article itemscope itemtype="http://schema.org/Article">
     <header>
       <h1 itemprop="headline" class="text-heading mb-1 font-bold">
-        {{ heading }}
+        Xin chào tôi là abc
       </h1>
 
       <p
-        v-if="description"
         itemprop="description"
         class="text-sx text-tcl-dimmed"
       >
-        {{ description }}
+        <!-- {{ description }} -->
+        Và đây là mô tả của tôi khi nói về nhiều quy định thực tế trong cùng một quýt
       </p>
     </header>
 

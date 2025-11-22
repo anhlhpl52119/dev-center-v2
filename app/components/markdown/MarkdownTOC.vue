@@ -13,7 +13,7 @@ interface TocItem {
   anchor: string;
 }
 
-const md = new MarkdownIt()
+const md = new MarkdownIt();
 
 const tocItems = computed(() => {
   if (!props.content)
