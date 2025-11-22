@@ -1,13 +1,13 @@
 import type { NuxtConfig } from 'nuxt/schema';
 import { dev } from './public-variables/dev';
-import { live } from './public-variables/live';
+import { production } from './public-variables/production';
 
-const runType = process.env.RUN_TYPE || 'live';
+const runType = process.env.RUN_TYPE || 'production';
 const publicEnvConfig: Record<string, any> = {
   dev,
-  live,
+  production,
 };
 
 export const runtimeConfig: NuxtConfig['runtimeConfig'] = {
-  public: publicEnvConfig[runType] || live,
+  public: publicEnvConfig[runType] || production,
 };

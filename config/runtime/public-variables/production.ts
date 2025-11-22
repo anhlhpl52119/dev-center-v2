@@ -1,6 +1,6 @@
 const SITE_URL = 'https://developers-vulcanus.onstove.com';
 
-export const live = {
+export const production = {
   runType: 'production',
   defaultLocale: 'en',
   apiBaseUrl: 'https://developers-vulcanus-api.onstove.com',

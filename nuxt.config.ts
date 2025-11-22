@@ -29,27 +29,17 @@ export default defineNuxtConfig({
         files: ['en/common.json'],
       },
       {
-        code: 'ko',
-        language: 'ko',
-        name: 'Korean',
-        files: ['ko/common.json'],
+        code: 'vi',
+        language: 'vi',
+        name: 'Vietnamese',
+        files: ['vi/common.json'],
       },
     ],
     strategy: 'prefix',
-    defaultLocale: 'ko',
+    defaultLocale: 'vi',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'LOCALE',
-    },
-  },
-  app: {
-    head: {
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://d2x8kymwjom7h7.cloudfront.net/live/application_no/STATIC/common/stds-font-icon-v2/stds-font-icon.css',
-        },
-      ],
     },
   },
   icon: {
