@@ -19,7 +19,7 @@ async function onCallApi() {
         class="text-heading mb-1 font-bold"
         @click="onCallApi"
       >
-        Xin chào tôi là abc
+        Xin chào tôi là
       </h1>
 
       <p itemprop="description" class="text-sx text-tcl-dimmed">
