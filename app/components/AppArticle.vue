@@ -5,21 +5,28 @@ const updatedAt = ref('');
 const heading = computed(() => title.value || '');
 const description = computed(() => '');
 const lastUpdatedAt = computed(() => updatedAt.value);
+async function onCallApi() {
+  const res = await $fetch('/docs/about-me.md');
+  content.value = res?.toString() ?? '';
+  console.log(res);
+}
 </script>
 
 <template>
   <article itemscope itemtype="http://schema.org/Article">
     <header>
-      <h1 itemprop="headline" class="text-heading mb-1 font-bold">
+      <h1
+        itemprop="headline"
+        class="text-heading mb-1 font-bold"
+        @click="onCallApi"
+      >
         Xin chào tôi là abc
       </h1>
 
-      <p
-        itemprop="description"
-        class="text-sx text-tcl-dimmed"
-      >
+      <p itemprop="description" class="text-sx text-tcl-dimmed">
         <!-- {{ description }} -->
-        Và đây là mô tả của tôi khi nói về nhiều quy định thực tế trong cùng một quýt
+        Và đây là mô tả của tôi khi nói về nhiều quy định thực tế trong cùng một
+        quýt
       </p>
     </header>
 

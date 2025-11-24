@@ -1,14 +1,8 @@
 <script lang="ts" setup>
 import type { LNBModel, Model } from '~/components/OldLeftNavBar/types';
 
-const { locale } = useI18n();
 const lnbData = ref<any>({});
 
-/**
- * Convert flat array of Model to hierarchical Tree structure
- * @param models - Array of Model objects
- * @returns Array of Tree objects with nested children
- */
 function convertToTree(models: Model[]): LNBModel[] {
   // Create a map for quick lookup by id
   const map = new Map<number, LNBModel>();
