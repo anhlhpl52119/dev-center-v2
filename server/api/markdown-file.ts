@@ -1,10 +1,4 @@
-export default defineEventHandler((event) => {
-  // const filePath = '/docs/about-me.md';
-  // try {
-  //   const markdownContent = fs.readFileSync(filePath, 'utf-8');
-  //   return markdownContent;
-  // }
-  // catch (error) {
-  //   return { err: 'error', message: 'Not Found or Error,' };
-  // }
+export default defineEventHandler(async (event) => {
+  const data = await useStorage('assets:contents').getItem('/vi/about-me.md');
+  return data;
 });

@@ -6,9 +6,8 @@ const heading = computed(() => title.value || '');
 const description = computed(() => '');
 const lastUpdatedAt = computed(() => updatedAt.value);
 async function onCallApi() {
-  const res = await $fetch('/docs/about-me.md');
+  const res = await $fetch('/api/markdown-file');
   content.value = res?.toString() ?? '';
-  console.log(res);
 }
 </script>
 

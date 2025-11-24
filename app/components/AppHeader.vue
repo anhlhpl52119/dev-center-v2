@@ -12,9 +12,7 @@ const search = ref('');
 
 <template>
   <header>
-    <nav
-      class="mx-auto flex h-16 max-w-400 items-center justify-end-safe px-10"
-    >
+    <nav class="mx-auto flex h-16 max-w-400 items-center justify-end-safe px-10">
       <!-- Left -->
       <div class="mr-auto">
         <NuxtLink to="/" class="mr-4">
@@ -56,7 +54,6 @@ const search = ref('');
         </li>
 
         <li>
-          <!-- <Icon name="svg:locale" class="py-auto block size-5" /> -->
           <VDropdown
             v-model:shown="isShowLanguageMenus"
             distance="0"
