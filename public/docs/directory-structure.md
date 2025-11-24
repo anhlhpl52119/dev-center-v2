@@ -21,19 +21,22 @@ Example user for `user` apis
 ```ts
 // user.d.ts
 export declare namespace UserApi {
-
   export interface UserObj {
     // ...
     userRole: string; // refer to `./user.constant` USER_ROLE
     // ...others
   }
 
-  export interface GetListParams { /* ... */ }
-  export interface ListResponse { /* ... */ }
+  export interface GetListParams {
+    /* ... */
+  }
+  export interface ListResponse {
+    /* ... */
+  }
 }
 ```
 
-  why is namespace?
+why is namespace?
 
 - simple group and export with name defined for this namespace
 - When using `module` (`declare module`) when use cannot import the defined name

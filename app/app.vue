@@ -7,7 +7,7 @@ useHead(() => ({
   },
   link: [...(i18nHead.value.link || [])],
   meta: [...(i18nHead.value.meta || [])],
-  title: t('common.vulcanus_guide'),
+  title: t('common.my_blog'),
 }));
 </script>
 

@@ -49,7 +49,7 @@ h1 {
 }
 ```
 
------
+---
 
 ### 3\. Ví dụ nâng cao: Animation với Font Weight
 
@@ -75,7 +75,7 @@ Nếu bạn làm điều này với font tĩnh, chữ sẽ bị giật cục (t�
 2. **Tự do thiết kế:** Designer muốn độ đậm là 630 hay 850 đều được, không bị giới hạn ở các mức 400, 500, 700 cứng nhắc.
 3. **Trải nghiệm mượt mà:** Các hiệu ứng hover, focus trở nên tinh tế hơn hẳn.
 
------
+---
 
 ## có nên dùng `local()` Không?
 
@@ -89,8 +89,8 @@ Dưới đây là phân tích chi tiết tại sao bạn nên bỏ qua `local()`
 
 Đây là kịch bản ác mộng thường gặp:
 
-* **Trên web:** Bạn dùng font **Inter** phiên bản mới nhất (v4.0) có chỉnh sửa khoảng cách (kerning) và hỗ trợ tiếng Việt cực tốt.
-* **Trên máy người dùng:** Họ đã cài sẵn font **Inter** từ 5 năm trước (v1.0) để làm Photoshop, phiên bản này bị lỗi dấu tiếng Việt hoặc nét chữ hơi khác.
+- **Trên web:** Bạn dùng font **Inter** phiên bản mới nhất (v4.0) có chỉnh sửa khoảng cách (kerning) và hỗ trợ tiếng Việt cực tốt.
+- **Trên máy người dùng:** Họ đã cài sẵn font **Inter** từ 5 năm trước (v1.0) để làm Photoshop, phiên bản này bị lỗi dấu tiếng Việt hoặc nét chữ hơi khác.
 
 Nếu bạn dùng `src: local('Inter'), url(...)`:
 \=\> Trình duyệt thấy máy người dùng có font tên là "Inter" -\> **Nó dùng luôn font cũ rích đó**.
@@ -100,19 +100,19 @@ Nếu bạn dùng `src: local('Inter'), url(...)`:
 
 Nếu bạn làm theo lời khuyên trước của tôi là dùng **Variable Font**, thì `local()` là điều tối kỵ.
 
-* **Web:** Bạn khai báo Variable Font (hỗ trợ weight 100-900).
-* **Máy người dùng:** Có cài sẵn file Static (chỉ có Bold và Regular).
+- **Web:** Bạn khai báo Variable Font (hỗ trợ weight 100-900).
+- **Máy người dùng:** Có cài sẵn file Static (chỉ có Bold và Regular).
 
 Khi CSS gọi `font-weight: 550`:
 
-* Font Variable (Web) sẽ hiển thị chính xác độ đậm 550.
-* Font Local (Máy người dùng) không hiểu 550 là gì, nó sẽ ép về 400 hoặc 700. Giao diện và hiệu ứng của bạn sẽ bị vỡ hoàn toàn.
+- Font Variable (Web) sẽ hiển thị chính xác độ đậm 550.
+- Font Local (Máy người dùng) không hiểu 550 là gì, nó sẽ ép về 400 hoặc 700. Giao diện và hiệu ứng của bạn sẽ bị vỡ hoàn toàn.
 
 ### 3\. Tên Font không đồng nhất (Naming Chaos)
 
 Tên font trong máy tính (System name) và tên font bạn gọi trong CSS (PostScript name) đôi khi không khớp nhau giữa Windows, macOS và Linux. Việc đoán đúng tên `local()` để chạy tốt trên mọi hệ điều hành là rất mệt mỏi và dễ sai sót.
 
------
+---
 
 ### So sánh Code: Nên và Không Nên
 

@@ -1,5 +1,3 @@
-import fs from 'node:fs';
-
 export default defineEventHandler((event) => {
   // const filePath = '/docs/about-me.md';
   // try {
