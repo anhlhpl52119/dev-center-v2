@@ -52,10 +52,14 @@ const tocItems = computed(() => {
     </div>
 
     <ul class="text-tcl-dimmed mt-1.5 text-sm leading-5.5">
-      <li v-for="item in tocItems" :key="item.anchor" :class="{
-        'mt-2 font-medium': item.level <= 2,
-        'pl-1 font-normal': item.level > 2,
-      }">
+      <li
+        v-for="item in tocItems"
+        :key="item.anchor"
+        :class="{
+          'mt-2 font-medium': item.level <= 2,
+          'pl-1 font-normal': item.level > 2,
+        }"
+      >
         <template v-if="item.level <= 2">
           <NuxtLink class="hover:text-primary cursor-pointer" :to="`#${item.anchor}`">
             {{ item.title }}
