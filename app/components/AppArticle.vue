@@ -19,12 +19,12 @@ async function onCallApi() {
         class="text-heading mb-1 font-bold"
         @click="onCallApi"
       >
-        Xin chào tôi là
+        Xin chào tôi
       </h1>
 
       <p itemprop="description" class="text-sx text-tcl-dimmed">
         <!-- {{ description }} -->
-        Và đây là mô tả của tôi khi nói về nhiều quy định thực tế trong cùng một
+        Và đây là mô tả của tôi khi
         quýt
       </p>
     </header>
