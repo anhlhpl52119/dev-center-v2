@@ -70,6 +70,16 @@
           "url": "https://tailwindcss.com/docs/functions-and-directives#reference-directive"
         }
       ]
+    },
+    {
+      "name": "@utility",
+      "description": "Use the @utility directive to add custom utilities to your project that work with variants like hover, focus and lg",
+      "references": [
+        {
+          "name": "Tailwind Documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#utility-directive"
+        }
+      ]
     }
   ]
 }
