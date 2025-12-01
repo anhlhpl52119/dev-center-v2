@@ -6,7 +6,7 @@
   "files.associations": {
     "*.css": "tailwindcss"
   },
-  "tailwindCSS.rootFontSize": 16,
+  "tailwindCSS.rootFontSize": 10,
   "tailwindCSS.classAttributes": ["class", "ui"],
   "css.customData": [".vscode/tailwind.json"],
   "tailwindCSS.experimental.configFile": "app/assets/css/main.css", // https://github.com/tailwindlabs/tailwindcss-intellisense?tab=readme-ov-file#tailwind-css-v4x-css-entrypoints
@@ -32,7 +32,8 @@
   // Spell check
   "cSpell.words": [
     "bubbliz",
-    "vulcanus"
+    "vulcanus",
+    "oklch"
   ],
 
   "search.exclude": {

@@ -12,7 +12,6 @@ const lastUpdatedAt = computed(() => updatedAt.value);
       <h1 itemprop="headline" class="text-heading mb-1 font-bold">
         {{ heading }}
       </h1>
-
       <p
         v-if="description"
         itemprop="description"

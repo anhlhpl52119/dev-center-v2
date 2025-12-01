@@ -4,10 +4,13 @@
 @import './layers/01-theme.css' layer(theme);
 @import './layers/02-base.css' layer(base);
 @import './layers/03-components.css' layer(components);
-@import './layers/04-utilities.css' layer(utilities);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@import './layers/04-utilities.css'; 
 
 @layer base {
   html {
+    font-size: 62.5%;
     font-family: var(--ff-stack-default);
 
     scroll-behavior: smooth;
@@ -20,6 +23,7 @@
     /* Korean font */
     &[lang='ko'] {
       font-family: var(--ff-han-sans-neo);
+      letter-spacing: -0.03rem;
     }
     &[lang='en'] {
       font-family: var(--ff-inter);
@@ -27,10 +31,10 @@
   }
 
   body {
-    @apply text-tcl-base min-h-screen bg-fixed;
-    font-size: var(--text-body);
+    @apply text-base min-h-screen bg-fixed;
+    font-size: 1.4rem;
     background-repeat: no-repeat;
-    background-color: var(--color-abg-underlay);
-    background-image: var(--color-abg-gradient);
+    background-color: var(--clr-background-underlay);
+    background-image: var(--clr-background-gradient);
   }
 }
