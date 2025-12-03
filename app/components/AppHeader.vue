@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Dropdown as VDropdown } from 'floating-vue';
-
 const isShowLanguageMenus = ref<boolean>(false);
 const { locale, setLocale } = useI18n();
 const DEFAULT_LOCALES: Record<string, any> = {
@@ -12,14 +10,17 @@ const search = ref('');
 
 <template>
   <header>
-    <nav class="mx-auto h-64 max-w-1600 px-16 lg:px-40 relative">
+    <nav class="relative mx-auto h-64 max-w-1600 px-16 lg:px-40">
       <!-- Left -->
-      <div class="h-full flex items-center relative">
+      <div class="relative flex h-full items-center">
         <div class="mr-auto">
-          <NuxtLink to="/" class="leading-30 flex items-center gap-16">
-            <Icon name="svg:stove-text-logo" class="hidden md:block w-71 h-16" />
+          <NuxtLink to="/" class="flex items-center gap-16 leading-30">
+            <Icon
+              name="svg:stove-text-logo"
+              class="hidden h-16 w-71 md:block"
+            />
 
-            <span class="font-bold text-20">
+            <span class="text-20 font-bold">
               {{ $t('common.bubbliz_guide') }}
             </span>
           </NuxtLink>
@@ -33,15 +34,15 @@ const search = ref('');
             external
             target="_blank"
             rel="noopener noreferrer"
-            class="hidden group clickable sm:flex gap-2 items-center justify-center h-32 py-7 pl-12 pr-8 rounded-full hover:bg-abg-dimmed"
+            class="group clickable hover:bg-abg-dimmed hidden h-32 items-center justify-center gap-2 rounded-full py-7 pr-8 pl-12 sm:flex"
           >
-            <span class="tracking-[-0.0132em] text-12 font-medium">
+            <span class="text-12 font-medium tracking-[-0.0132em]">
               {{ $t('common.go_to_creator_center') }}
             </span>
 
             <Icon
               name="svg:navigate-out"
-              class="group-hover:text-primary size-12 m-2"
+              class="group-hover:text-primary m-2 size-12"
             />
           </NuxtLink>
 

@@ -3,11 +3,8 @@
     aria-label="Toggle user menu"
     aria-describedby="Show menu"
     aria-pressed="false"
-    class="ml-4 p-8 clickable rounded-full hover:bg-abg-dimmed inline-flex items-center justify-center"
+    class="clickable hover:bg-abg-dimmed ml-4 inline-flex items-center justify-center rounded-full p-8"
   >
-    <Icon
-      name="svg:dot-vertical"
-      class="size-18"
-    />
+    <Icon name="svg:dot-vertical" class="size-18" />
   </button>
 </template>

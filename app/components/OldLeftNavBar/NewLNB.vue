@@ -34,7 +34,7 @@ const isExpanded = (id: number) => expandedItems.value.has(id);
           v-if="!item.isFolder"
           :to="`/${item.path}`"
           exactActiveClass="bg-abg-active text-tcl-primary"
-          class="capitalize rounded-full block py-2 pr-3 pl-4 leading-6 font-medium hover:bg-abg-raised/7"
+          class="hover:bg-abg-raised/7 block rounded-full py-2 pr-3 pl-4 leading-6 font-medium capitalize"
           activeClass="font-medium"
         >
           {{ item.title }}
@@ -43,7 +43,7 @@ const isExpanded = (id: number) => expandedItems.value.has(id);
         <!-- Folder -->
         <div
           v-else
-          class="cursor-pointer text-md flex items-center rounded-full py-2 pr-3 pl-4 hover:bg-abg-raised/7"
+          class="text-md hover:bg-abg-raised/7 flex cursor-pointer items-center rounded-full py-2 pr-3 pl-4"
           @click="toggleExpand(item.id)"
         >
           <span class="capitalize">{{ item.title }}</span>
@@ -56,7 +56,9 @@ const isExpanded = (id: number) => expandedItems.value.has(id);
 
         <!-- Nested child -->
         <ul
-          v-if="item.children?.length && (!item.isFolder || isExpanded(item.id))"
+          v-if="
+            item.children?.length && (!item.isFolder || isExpanded(item.id))
+          "
           class="mt-1 pl-4"
         >
           <NewLNB :items="item.children" />

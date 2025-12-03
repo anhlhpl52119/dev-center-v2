@@ -27,7 +27,13 @@ function AdmonitionPlugin(md: markdownit, options: AdmonitionPluginOps): void {
   let type: string = '';
   let title: string = '';
 
-  const render: Renderer.RenderRule = (tokens: Token[], idx: number, _options: object, _env: any, self: Renderer) => {
+  const render: Renderer.RenderRule = (
+    tokens: Token[],
+    idx: number,
+    _options: object,
+    _env: any,
+    self: Renderer,
+  ) => {
     const token: Token = tokens[idx];
 
     if (token.type === 'admonition_open') {
@@ -61,7 +67,12 @@ function AdmonitionPlugin(md: markdownit, options: AdmonitionPluginOps): void {
   md.block.ruler.before(
     'code',
     'admonition',
-    (state: StateBlock, startLine: number, endLine: number, silent: boolean): boolean => {
+    (
+      state: StateBlock,
+      startLine: number,
+      endLine: number,
+      silent: boolean,
+    ): boolean => {
       let pos;
       let nextLine;
       let token;

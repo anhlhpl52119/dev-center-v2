@@ -17,7 +17,8 @@
   "i18n-ally.sourceLanguage": "en",
 
   // Lint
-  "eslint.validate": [ // https://github.com/antfu/eslint-config?tab=readme-ov-file#ide-support-auto-fix-on-save
+  "eslint.validate": [
+    // https://github.com/antfu/eslint-config?tab=readme-ov-file#ide-support-auto-fix-on-save
     "javascript",
     "typescript",
     "vue",
@@ -30,11 +31,7 @@
   ],
 
   // Spell check
-  "cSpell.words": [
-    "bubbliz",
-    "vulcanus",
-    "oklch"
-  ],
+  "cSpell.words": ["bubbliz", "vulcanus", "oklch"],
 
   "search.exclude": {
     "**/node_modules": true,

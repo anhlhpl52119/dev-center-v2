@@ -13,14 +13,6 @@
     font-size: 62.5%;
     font-family: var(--ff-han-sans-neo);
     scroll-behavior: smooth;
-
-    /* Locale font */
-    /* &[lang='ko'] {
-      font-family: var(--ff-han-sans-neo);
-    }
-    &[lang='en'] {
-      font-family: var(--ff-inter);
-    } */
   }
 
   body {

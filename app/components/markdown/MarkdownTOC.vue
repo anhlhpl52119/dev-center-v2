@@ -28,7 +28,10 @@ const tocItems = computed(() => {
       const level = Number.parseInt(token.tag.substring(1));
       const titleToken = tokens[tokens.indexOf(token) + 1];
       if (titleToken && titleToken.type === 'inline') {
-        const title = titleToken.content.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+        const title = titleToken.content.replace(
+          /\[([^\]]+)\]\([^)]+\)/g,
+          '$1',
+        );
 
         const anchor = slugify(title);
         items.push({ level, title, anchor });
@@ -75,7 +78,7 @@ const tocItems = computed(() => {
         <template v-else>
           <div class="border-l-abd-base hover:border-l-primary border-l-1 py-1">
             <NuxtLink
-              class="pl-4 hover:text-primary cursor-pointer"
+              class="hover:text-primary cursor-pointer pl-4"
               :to="`#${item.anchor}`"
             >
               {{ item.title }}

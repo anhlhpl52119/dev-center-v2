@@ -14,8 +14,7 @@ const md = new MarkdownIt({
   breaks: true,
   quotes: '“”‘’',
   xhtmlOut: true,
-})
-  .use(AdmonitionPlugin);
+}).use(AdmonitionPlugin);
 
 const renderedContent = computed(() => {
   if (!props.content) {

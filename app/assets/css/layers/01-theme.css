@@ -2,8 +2,8 @@
 
 :root {
   --ff-han-sans-neo:
-    'Spoqa Han Sans Neo', -apple-system, 'system-ui', 'Segoe UI', Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    'Spoqa Han Sans Neo', -apple-system, 'system-ui', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
 
   --clr-surface: hsla(0, 0%, 100%, 1);
   --clr-primary: hsla(226, 100%, 59%, 1);
@@ -27,11 +27,7 @@
   --clr-background-active: --alpha(var(--clr-primary) / 6%);
 
   --clr-background-underlay: hsla(216, 100%, 99%, 1);
-  --clr-background-gradient: linear-gradient(
-    180deg,
-    hsla(214, 100%, 76%, 0.2) 0%,
-    hsla(0, 0%, 100%, 0) 45.9%
-  );
+  --clr-background-gradient: linear-gradient(180deg, hsla(214, 100%, 76%, 0.2) 0%, hsla(0, 0%, 100%, 0) 45.9%);
 }
 
 /*

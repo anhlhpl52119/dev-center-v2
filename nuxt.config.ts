@@ -44,10 +44,12 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      link: [{
-        rel: 'stylesheet',
-        href: 'https://d2x8kymwjom7h7.cloudfront.net/live/application_no/STATIC/common/stds-font-icon-v2/stds-font-icon.css',
-      }],
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://d2x8kymwjom7h7.cloudfront.net/live/application_no/STATIC/common/stds-font-icon-v2/stds-font-icon.css',
+        },
+      ],
     },
   },
   icon: {
