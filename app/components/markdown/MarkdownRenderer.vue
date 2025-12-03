@@ -39,8 +39,3 @@ const renderedContent = computed(() => {
     v-html="renderedContent"
   />
 </template>
-
-<style>
-@import '~/assets/css/github/github-markdown.css';
-@import '~/assets/css/github/github-light.css';
-</style>
