@@ -20,82 +20,68 @@ function handleClick(event: MouseEvent) {
 <template>
   <button
     class="btn"
+    type="button"
     :class="[{ 'btn--active': isActive, 'btn--icon-only': !hasDefaultSlot }]"
     :aria-pressed="isActive"
     v-bind="$attrs"
     @click="handleClick"
   >
-    <span v-if="hasDefaultSlot" class="btn__text">
-      <slot />
+    <span class="mr-4">accent</span>
+    <span
+      v-if="hasIconSlot"
+      class="btn__icon"
+      role="img"
+    >
+      <slot name="icon" />
     </span>
 
-    <span v-if="hasIconSlot" class="btn__icon">
-      <slot name="icon" />
+    <span v-if="hasDefaultSlot" class="btn__text">
+      <slot />
     </span>
   </button>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border: 2px solid #3b82f6;
-  border-radius: 0.5rem;
-  background-color: #3b82f6;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
   outline: none;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  touch-action: manipulation;
+  line-height: 1.5714285714285714;
 
-  &:hover {
-    background-color: #2563eb;
-    border-color: #2563eb;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+  font-size: 24px;
+  height: 32px;
+  padding: 4px 15px;
+  border-radius: 6px;
 
-  &:focus-visible {
-    outline: 3px solid #93c5fd;
-    outline-offset: 2px;
-  }
+  color: #fff;
+  background-color: #1677ff;
+  box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 
-  &:active {
-    transform: translateY(0);
-  }
-
-  &--active {
-    background-color: #10b981;
-    border-color: #10b981;
-
-    &:hover {
-      background-color: #059669;
-      border-color: #059669;
-    }
-  }
-
-  &--icon-only {
-    padding: 0.75rem;
-
-    .btn__icon {
-      margin-left: 0;
-    }
-  }
-
-  &__text {
-    line-height: 1;
-  }
-
-  &__icon {
-    display: inline-flex;
+  .btn__icon {
+    display: inline-block;
     align-items: center;
-    justify-content: center;
-    line-height: 1;
-    font-size: 1.25rem;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: 0.05em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    /* svg {
+      line-height: 1;
+    } */
   }
 }
 </style>

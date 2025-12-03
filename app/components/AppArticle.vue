@@ -9,6 +9,17 @@ const lastUpdatedAt = computed(() => updatedAt.value);
 <template>
   <article itemscope itemtype="http://schema.org/Article">
     <header>
+      <Button>
+        Clr
+        <template #icon>
+          <Icon
+            name="svg:search"
+            mode="svg"
+            class="inline-block"
+          />
+        </template>
+      </Button>
+
       <h1 itemprop="headline" class="text-32 mb-4 leading-44 font-bold">
         {{ heading }}
       </h1>

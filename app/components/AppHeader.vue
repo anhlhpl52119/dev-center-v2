@@ -1,18 +1,12 @@
 <script setup lang="ts">
-const isShowLanguageMenus = ref<boolean>(false);
-const { locale, setLocale } = useI18n();
-const DEFAULT_LOCALES: Record<string, any> = {
-  ko: { code: 'ko', name: '한국어', iso: 'ko-KR' },
-  en: { code: 'en', name: 'English (US)', iso: 'en-US' },
-};
-const search = ref('');
+
 </script>
 
 <template>
   <header>
-    <nav class="relative mx-auto h-64 max-w-1600 px-16 lg:px-40">
-      <!-- Left -->
-      <div class="relative flex h-full items-center">
+    <nav class="mx-auto h-64 max-w-1600 px-16 lg:px-40">
+      <div class="relative flex size-full items-center justify-end">
+        <!-- Left Logo -->
         <div class="mr-auto">
           <NuxtLink to="/" class="flex items-center gap-16 leading-30">
             <Icon
@@ -26,7 +20,7 @@ const search = ref('');
           </NuxtLink>
         </div>
 
-        <!-- right -->
+        <!-- right nav -->
         <div class="flex items-center">
           <!-- Dev center link -->
           <NuxtLink
