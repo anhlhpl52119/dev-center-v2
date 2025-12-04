@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   runtimeConfig,
 
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/icon', '@nuxtjs/i18n', '@vueuse/nuxt', 'floating-vue/nuxt'],
+  modules: ['@nuxt/icon', '@nuxtjs/i18n', 'floating-vue/nuxt'],
   vite: { plugins: [tailwindcss()] },
   imports: {
     dirs: ['constants'],

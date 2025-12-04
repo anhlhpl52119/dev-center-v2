@@ -1,25 +1,25 @@
 <script setup lang="ts">
-
+const { screenSmallerOrEq } = useBreakpoints();
 </script>
 
 <template>
   <header>
     <nav class="mx-auto h-64 max-w-1600 px-16 lg:px-40">
-      <div class="relative flex size-full items-center">
+      <div class="relative flex size-full items-center justify-end-safe">
         <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center gap-16 leading-30">
+        <NuxtLink to="/" class="mr-auto leading-30 whitespace-nowrap">
           <Icon
             name="svg:stove-text-logo"
-            class="hidden h-16 w-71 md:block"
+            class="hidden h-16 w-71 md:inline-block align-[-0.1em]"
           />
 
-          <span class="text-20 font-bold">
+          <span class="text-20 font-bold ml-16">
             {{ $t('common.bubbliz_guide') }}
           </span>
         </NuxtLink>
 
         <!-- right nav -->
-        <div class="lg:relative ml-auto flex justify-end-safe items-center lg:w-600">
+        <div class="md:relative ml-8 flex justify-end-safe items-center md:w-880">
           <!-- external link -->
           <NuxtLink
             to="#"
@@ -40,7 +40,7 @@
 
           <!-- search -->
           <SearchControl>
-            <template v-if="false" #trigger="{ toggle, isShowed }">
+            <template v-if="screenSmallerOrEq.md" #trigger="{ toggle, isShowed }">
               <button
                 v-show="!isShowed"
                 aria-label="Search page content"
@@ -58,8 +58,6 @@
         </div>
 
         <!-- menu -->
-        <UserMenuControl />
-
         <UserMenuControl />
       </div>
     </nav>
