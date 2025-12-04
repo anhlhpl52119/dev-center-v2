@@ -26,7 +26,6 @@ function handleClick(event: MouseEvent) {
     v-bind="$attrs"
     @click="handleClick"
   >
-    <span class="mr-4">accent</span>
     <span
       v-if="hasIconSlot"
       class="btn__icon"
@@ -59,7 +58,6 @@ function handleClick(event: MouseEvent) {
   line-height: 1.5714285714285714;
 
   font-size: 24px;
-  height: 32px;
   padding: 4px 15px;
   border-radius: 6px;
 
@@ -78,10 +76,6 @@ function handleClick(event: MouseEvent) {
     vertical-align: 0.05em;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-
-    /* svg {
-      line-height: 1;
-    } */
   }
 }
 </style>
