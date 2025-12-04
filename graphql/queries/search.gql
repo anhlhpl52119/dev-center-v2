@@ -1,0 +1,9 @@
+query Pages4($tags: [String!]!) {
+  pages {
+    menu(tags: $tags) {
+      id
+      title
+      category
+    }
+  }
+}

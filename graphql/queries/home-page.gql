@@ -1,0 +1,11 @@
+query PagesHome($tags: [String!]!) {
+  pages {
+    menu(tags: $tags) {
+      id
+      path
+      locale
+      title
+      category
+    }
+  }
+}

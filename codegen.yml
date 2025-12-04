@@ -1,0 +1,12 @@
+# schema: https://developers-vulcanus-api-dev.onstove.com/graphql
+# schema: http://localhost:80/graphql/graphql
+schema: './graphql/schema.graphql'
+documents: './graphql/queries/*.gql'
+generates:
+  ./graphql/generated-gql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-generic-sdk
+    config:
+      rawRequest: true

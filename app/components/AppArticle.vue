@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { Pages3Document } from '@@/graphql/generated-gql';
+
 const { content, title, updatedAt } = useRoutesContent();
 
 const heading = computed(() => title.value || '');
@@ -19,7 +21,7 @@ const lastUpdatedAt = computed(() => updatedAt.value);
       >
         {{ description }}
       </p>
-      <p>asdasd</p>
+      <pre><p>{{ Pages3Document.loc?.source.body }} | {{ typeof Pages3Document }}</p></pre>
     </header>
 
     <MarkdownRenderer

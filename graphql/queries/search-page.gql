@@ -1,0 +1,23 @@
+query Pages3(
+  $query: String!
+  $category: String
+  $locale: String
+  $page: Int
+  $size: Int
+  $inCategory: [String]
+) {
+  pages {
+    search(
+      query: $query
+      category: $category
+      locale: $locale
+      page: $page
+      size: $size
+      inCategory: $inCategory
+    ) {
+      totalHits
+      results
+      description
+    }
+  }
+}
