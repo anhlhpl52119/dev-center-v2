@@ -15,25 +15,25 @@ const { locale } = useI18n();
 // });
 // ress.data?.pages?.tree
 
-async function asd() {
-  const res = await createFetchRequester('https://developers-vulcanus-api-dev.onstove.com/graphql').Pages2({
-    locale: 'ko',
-    mode: PageTreeMode.Like,
-    path: 'web/etc',
-  });
-}
+// async function asd() {
+//   const res = await createFetchRequester('https://developers-vulcanus-api-dev.onstove.com/graphql').Pages2({
+//     locale: 'ko',
+//     mode: PageTreeMode.Like,
+//     path: 'web/etc',
+//   });
+// }
 
-const { data: lnbData, execute } = await useAPI<any>('graphql', {
-  method: 'POST',
-  body: {
-    query: getQueryFromDocument(Pages2Document),
-    variables: {
-      locale,
-      mode: PageTreeMode.Like,
-      path: 'web/etc',
-    },
-  },
-});
+// const { data: lnbData, execute } = await useAPI<any>('graphql', {
+//   method: 'POST',
+//   body: {
+//     query: getQueryFromDocument(Pages2Document),
+//     variables: {
+//       locale,
+//       mode: PageTreeMode.Like,
+//       path: 'web/etc',
+//     },
+//   },
+// });
 
 /**
  * Convert flat array of Model to hierarchical Tree structure
@@ -95,11 +95,12 @@ function convertToTree(models: Model[]): LNBModel[] {
   return result;
 }
 
-const lnb = computed(() =>
-  (lnbData.value.data?.pages?.tree ?? ([] as Model[])).filter(
-    (item: any) => item.depth > 1,
-  ),
-);
+// const lnb = computed(() =>
+//   (lnbData.value.data?.pages?.tree ?? ([] as Model[])).filter(
+//     (item: any) => item.depth > 1,
+//   ),
+// );
+const lnb = computed(() => []);
 </script>
 
 <template>
@@ -109,7 +110,7 @@ const lnb = computed(() =>
     <div
       class="sticky top-0 mr-104 hidden h-screen w-272 shrink-0 overflow-y-auto p-24 pt-32 md:block"
     >
-      <button class="mb-24" @click="asd()">
+      <button class="mb-24">
         <Icon name="svg:menu" class="size-40" />
       </button>
       <NewLNB :items="convertToTree(lnb)" />

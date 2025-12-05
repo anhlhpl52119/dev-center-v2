@@ -1,3 +1,73 @@
+/**
+ * Component Classes Layer
+ * Reusable component styles using design tokens
+ */
+
+/* Interactive element base styles */
 .clickable {
-  @apply cursor-pointer transition-colors duration-200;
+  @apply cursor-pointer;
+  transition: color var(--transition-normal), background-color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+/* Focus visible states for accessibility */
+.clickable:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.clickable:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button base styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.button:active:not(:disabled) {
+  opacity: 0.8;
+}
+
+/* Text base styles */
+.text-body {
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--clr-text-base);
+}
+
+.text-small {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--clr-text-muted);
+}
+
+/* Card component */
+.card {
+  background-color: var(--clr-background-base);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
 }

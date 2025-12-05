@@ -1,54 +1,112 @@
 @import 'tailwindcss/theme.css';
 
-:root {
-  --ff-han-sans-neo:
-    'Spoqa Han Sans Neo', -apple-system, 'system-ui', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji';
+@layer theme {
+  :root {
+    /* ========================================
+       FONT FAMILIES
+       ======================================== */
+    --ff-han-sans-neo:
+      'Spoqa Han Sans Neo', -apple-system, 'system-ui', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji';
 
-  --clr-surface: hsla(0, 0%, 100%, 1);
-  --clr-primary: hsla(226, 100%, 59%, 1);
-  --clr-inverse: var(--clr-surface);
+    /* ========================================
+       COLOR SYSTEM
+       Using HSL for better accessibility and adjustability
+       ======================================== */
 
-  --clr-text-dimmed: hsla(0, 0%, 70%, 1);
-  --clr-text-muted: hsla(0, 0%, 70%, 1);
-  --clr-text-quiet: hsla(0, 0%, 40%, 1);
-  --clr-text-base: hsla(0, 0%, 20%, 1);
-  --clr-text-raised: hsla(0, 0%, 12%, 1);
-  --clr-text-elevated: hsla(0, 0%, 10%, 1);
+    /* Surfaces */
+    --clr-surface: hsla(0, 0%, 100%, 1);
+    --clr-primary: hsla(226, 100%, 59%, 1);
+    --clr-inverse: var(--clr-surface);
 
-  --clr-border-base: hsla(0, 0%, 0%, 0.1);
-  --clr-border-active: --alpha(var(--clr-primary) / 10%);
+    /* Text hierarchy */
+    --clr-text-dimmed: hsla(0, 0%, 70%, 1);
+    --clr-text-muted: hsla(0, 0%, 70%, 1);
+    --clr-text-quiet: hsla(0, 0%, 40%, 1);
+    --clr-text-base: hsla(0, 0%, 20%, 1);
+    --clr-text-raised: hsla(0, 0%, 12%, 1);
+    --clr-text-elevated: hsla(0, 0%, 10%, 1);
 
-  --clr-box-shadow-base: hsla(228, 23%, 25%, 0.1);
+    /* Borders */
+    --clr-border-base: hsla(0, 0%, 0%, 0.1);
+    --clr-border-active: hsla(226, 100%, 59%, 0.1);
 
-  --clr-background-dimmed: hsla(0, 0%, 0%, 0.04);
-  --clr-background-base: var(--clr-surface);
-  --clr-background-raised: hsla(214, 100%, 76%, 1);
-  --clr-background-active: --alpha(var(--clr-primary) / 6%);
+    /* Shadows */
+    --clr-box-shadow-base: hsla(228, 23%, 25%, 0.1);
 
-  --clr-background-underlay: hsla(216, 100%, 99%, 1);
-  --clr-background-gradient: linear-gradient(180deg, hsla(214, 100%, 76%, 0.2) 0%, hsla(0, 0%, 100%, 0) 45.9%);
-}
+    /* Backgrounds */
+    --clr-background-dimmed: hsla(0, 0%, 0%, 0.04);
+    --clr-background-base: var(--clr-surface);
+    --clr-background-raised: hsla(214, 100%, 76%, 1);
+    --clr-background-active: hsla(226, 100%, 59%, 0.06);
 
-/*
-  `inline`: https://tailwindcss.com/docs/colors#referencing-other-variables
-*/
-@theme inline {
-  --spacing: 0.1rem; /* 1 tw unit = 0.1rem = 1px */
-  --color-surface: var(--clr-surface);
-  --color-primary: var(--clr-primary);
-  --color-inverse: var(--clr-inverse);
-  --color-dimmed: var(--clr-text-dimmed);
-  --color-muted: var(--clr-text-muted);
-  --color-quiet: var(--clr-text-quiet);
-  --color-base: var(--clr-text-base);
-  --color-raised: var(--clr-text-raised);
-  --color-elevated: var(--clr-text-elevated);
-  /* Border */
-  --color-abd-base: var(--clr-border-base);
-  --color-abd-active: var(--clr-border-active);
-  /* Background */
-  --color-abg-dimmed: var(--clr-background-dimmed);
-  --color-abg-base: var(--clr-background-base);
-  --color-abg-active: var(--clr-background-active);
+    --clr-background-underlay: hsla(216, 100%, 99%, 1);
+    --clr-background-gradient: linear-gradient(
+      180deg,
+      hsla(214, 100%, 76%, 0.2) 0%,
+      hsla(0, 0%, 100%, 0) 45.9%
+    );
+  }
+
+  /* ========================================
+     TAILWIND THEME INTEGRATION
+     Maps design tokens to Tailwind utilities
+     https://tailwindcss.com/docs/colors#referencing-other-variables
+     ======================================== */
+
+  @theme inline {
+    /* Spacing scale (in rem for accessibility) */
+    --spacing-0: 0;
+    --spacing-1: var(--space-1);
+    --spacing-2: var(--space-2);
+    --spacing-3: var(--space-3);
+    --spacing-4: var(--space-4);
+    --spacing-6: var(--space-6);
+    --spacing-8: var(--space-8);
+    --spacing-12: var(--space-12);
+    --spacing-16: var(--space-16);
+
+    /* Typography scale */
+    --font-size-xs: var(--fs-xs);
+    --font-size-sm: var(--fs-sm);
+    --font-size-base: var(--fs-base);
+    --font-size-lg: var(--fs-lg);
+    --font-size-xl: var(--fs-xl);
+    --font-size-2xl: var(--fs-2xl);
+    --font-size-3xl: var(--fs-3xl);
+    --font-size-4xl: var(--fs-4xl);
+
+    /* Line heights */
+    --line-height-tight: var(--lh-tight);
+    --line-height-normal: var(--lh-normal);
+    --line-height-relaxed: var(--lh-relaxed);
+    --line-height-loose: var(--lh-loose);
+
+    /* Colors */
+    --color-surface: var(--clr-surface);
+    --color-primary: var(--clr-primary);
+    --color-inverse: var(--clr-inverse);
+    --color-text-dimmed: var(--clr-text-dimmed);
+    --color-text-muted: var(--clr-text-muted);
+    --color-text-quiet: var(--clr-text-quiet);
+    --color-text-base: var(--clr-text-base);
+    --color-text-raised: var(--clr-text-raised);
+    --color-text-elevated: var(--clr-text-elevated);
+
+    /* Borders */
+    --color-border-base: var(--clr-border-base);
+    --color-border-active: var(--clr-border-active);
+
+    /* Backgrounds */
+    --color-bg-dimmed: var(--clr-background-dimmed);
+    --color-bg-base: var(--clr-background-base);
+    --color-bg-active: var(--clr-background-active);
+
+    /* Border radius */
+    --border-radius-sm: var(--radius-sm);
+    --border-radius-md: var(--radius-md);
+    --border-radius-lg: var(--radius-lg);
+    --border-radius-xl: var(--radius-xl);
+    --border-radius-full: var(--radius-full);
+  }
 }
