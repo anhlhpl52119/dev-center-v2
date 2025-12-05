@@ -24,6 +24,8 @@ const lastUpdatedAt = computed(() => updatedAt.value);
       <pre><p>{{ Pages3Document.loc?.source.body }} | {{ typeof Pages3Document }}</p></pre>
     </header>
 
+    <Button>Try search</Button>
+
     <MarkdownRenderer
       :content="content"
       itemprop="articleBody"

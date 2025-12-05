@@ -1,3 +1,5 @@
+# ref: https://the-guild.dev/graphql/codegen/plugins/typescript/typescript-generic-sdk#usage
+
 # schema: https://developers-vulcanus-api-dev.onstove.com/graphql
 # schema: http://localhost:80/graphql/graphql
 schema: './graphql/schema.graphql'

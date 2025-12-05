@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { getPagesBySearchQuery } from '~~/graphql/queries/search';
-
 definePageMeta({
   name: 'search',
 });
+
+const getPagesBySearchQuery = {};
 
 const { locale } = useI18n();
 const route = useRoute();

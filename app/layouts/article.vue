@@ -1,21 +1,28 @@
 <script lang="ts" setup>
+import type { Pages2Query, Pages2QueryVariables } from '@@/graphql/generated-gql';
 import type { LNBModel, Model } from '~/components/OldLeftNavBar/types';
-import { getLNBQuery } from '~~/graphql/queries/lnb';
+import { getSdk, Pages2Document, PageTreeMode } from '@@/graphql/generated-gql';
+import getLNBQuery from '@@/graphql/queries/lnb.gql?raw';
 
 const { locale } = useI18n();
+// const res = createFetchRequester('/').Pages2;
+// const ress = await res({
+//   locale: 'ko',
+//   mode: 'asd',
+//   path: '/asd',
+// });
+// ress.data?.pages?.tree
 
-const { data: lnbData } = await useAPI<any>('graphql', {
+console.log(Pages2Document.definitions);
+const { data: lnbData, execute } = await useAPI<any>('graphql', {
   method: 'POST',
   body: {
-    query: getLNBQuery,
+    query: getQueryFromDocument(Pages2Document),
     variables: {
       locale,
-      mode: 'LIKE',
-      path: 'web',
+      mode: PageTreeMode.Like,
+      path: 'web/etc',
     },
-  },
-  headers: {
-    'Content-Type': 'application/json',
   },
 });
 
@@ -93,7 +100,7 @@ const lnb = computed(() =>
     <div
       class="sticky top-0 mr-104 hidden h-screen w-272 shrink-0 overflow-y-auto p-24 pt-32 md:block"
     >
-      <button class="mb-24">
+      <button class="mb-24" @click="execute()">
         <Icon name="svg:menu" class="size-40" />
       </button>
       <NewLNB :items="convertToTree(lnb)" />

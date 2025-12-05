@@ -1,4 +1,4 @@
-import { getSinglePageByPathQuery } from '~~/graphql/queries/single-page';
+const getSinglePageByPathQuery = {};
 
 function normalizeRoutePath(rawPath: string, localeCode?: string) {
   if (!rawPath) {

@@ -1,3 +1,4 @@
+/* eslint ignore */
 import { DocumentNode, ExecutionResult } from 'graphql';
 import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
