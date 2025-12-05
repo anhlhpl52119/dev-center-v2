@@ -1,11 +1,13 @@
 <script lang="ts" setup>
-import type { Pages2Query, Pages2QueryVariables } from '@@/graphql/generated-gql';
+import type { Pages2Query, Pages2QueryVariables } from '@@/graphql';
 import type { LNBModel, Model } from '~/components/OldLeftNavBar/types';
-import { getSdk, Pages2Document, PageTreeMode } from '@@/graphql/generated-gql';
+import { getSdk, Pages2Document, PageTreeMode } from '@@/graphql';
 import getLNBQuery from '@@/graphql/queries/lnb.gql?raw';
 
 const { locale } = useI18n();
-// const res = createFetchRequester('/').Pages2;
+// const res = createFetchRequester('/').PagesHome({
+//   tags:
+// });
 // const ress = await res({
 //   locale: 'ko',
 //   mode: 'asd',
@@ -13,7 +15,14 @@ const { locale } = useI18n();
 // });
 // ress.data?.pages?.tree
 
-console.log(Pages2Document.definitions);
+async function asd() {
+  const res = await createFetchRequester('https://developers-vulcanus-api-dev.onstove.com/graphql').Pages2({
+    locale: 'ko',
+    mode: PageTreeMode.Like,
+    path: 'web/etc',
+  });
+}
+
 const { data: lnbData, execute } = await useAPI<any>('graphql', {
   method: 'POST',
   body: {
@@ -100,7 +109,7 @@ const lnb = computed(() =>
     <div
       class="sticky top-0 mr-104 hidden h-screen w-272 shrink-0 overflow-y-auto p-24 pt-32 md:block"
     >
-      <button class="mb-24" @click="execute()">
+      <button class="mb-24" @click="asd()">
         <Icon name="svg:menu" class="size-40" />
       </button>
       <NewLNB :items="convertToTree(lnb)" />

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Pages3Document } from '@@/graphql/generated-gql';
+import { PagesSearchDocument } from '@@/graphql';
 
 const { content, title, updatedAt } = useRoutesContent();
 
@@ -21,7 +21,7 @@ const lastUpdatedAt = computed(() => updatedAt.value);
       >
         {{ description }}
       </p>
-      <pre><p>{{ Pages3Document.loc?.source.body }} | {{ typeof Pages3Document }}</p></pre>
+      <pre><p>{{ PagesSearchDocument.loc?.source.body }} | {{ typeof PagesSearchDocument }}</p></pre>
     </header>
 
     <Button>Try search</Button>

@@ -1,7 +1,7 @@
-import type { DocumentNode } from 'graphql';
-import type { Requester } from '~~/graphql/generated-gql';
-
-import { getSdk } from '~~/graphql/generated-gql';
+import type { DefinitionNode, DocumentNode } from 'graphql';
+import type { Requester } from '~~/graphql';
+import { print } from 'graphql';
+import { getSdk } from '~~/graphql';
 
 interface GraphQLResponse<T = any> {
   data?: T;
@@ -21,6 +21,21 @@ interface FetchRequesterOptions {
 }
 
 const validDocDefOps = ['mutation', 'query', 'subscription'];
+class GraphQLRequestError extends Error {
+  public errors: GraphQLError[];
+
+  constructor(errors: GraphQLError[]) {
+    const message = errors.map(e => e.message).join('\n');
+    super(message);
+    this.name = 'GraphQLRequestError';
+    this.errors = errors;
+
+    // Maintain proper stack trace for where our error was thrown
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, GraphQLRequestError);
+    }
+  }
+}
 
 export function createFetchRequester(
   endpoint: string,
@@ -44,7 +59,7 @@ export function createFetchRequester(
       );
     }
 
-    const definition = doc.definitions[0];
+    const definition = doc.definitions[0] || {} as DefinitionNode;
 
     // Validate document contains OperationDefinition
     if (definition.kind !== 'OperationDefinition') {
